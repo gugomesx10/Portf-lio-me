@@ -39,7 +39,7 @@ export default function About() {
               <div className="absolute -inset-4 bg-gradient-to-br from-indigo-600/20 to-cyan-400/10 rounded-3xl blur-2xl" />
               <div className="relative w-72 h-80 md:w-80 md:h-96 rounded-2xl overflow-hidden border border-indigo-500/20 shadow-2xl">
                 <img
-                  src="/foto.jpg"
+                  src={`${import.meta.env.BASE_URL}foto.jpg`}
                   alt="Gustavo Gomes"
                   className="w-full h-full object-cover object-top"
                   onError={e => {

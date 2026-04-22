@@ -140,7 +140,7 @@ export default function Hero() {
 
             <div className="relative w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-indigo-500/25 shadow-2xl shadow-indigo-500/20">
               <img
-                src="/foto.jpg"
+                src={`${import.meta.env.BASE_URL}foto.jpg`}
                 alt="Gustavo Gomes"
                 className="w-full h-full object-cover object-top"
                 onError={e => {
