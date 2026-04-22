@@ -105,7 +105,7 @@ export default function About() {
             </div>
 
             <a
-              href="/curriculo.pdf"
+              href={`${import.meta.env.BASE_URL}curriculo.pdf`}
               download
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 active:scale-95 text-white font-semibold transition-all duration-200 shadow-lg shadow-indigo-500/20"
             >
