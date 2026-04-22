@@ -16,11 +16,9 @@ npm run dev
 
 Acesse `http://localhost:5173`
 
-## Foto
-Coloque sua foto como `public/foto.jpg` para exibir no Hero e About.
-
-## Currículo
-Coloque o arquivo como `public/curriculo.pdf` para o botão de download funcionar.
+## Assets incluídos
+- `public/foto.jpg` — foto de perfil (Hero e Sobre)
+- `public/curriculo.pdf` — currículo para download
 
 ## Git Flow utilizado
 - `main` → produção (tags v1.0.0, v1.0.1)
