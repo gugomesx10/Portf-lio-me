@@ -30,10 +30,17 @@ export default function Navbar() {
           if (e.isIntersecting) setActive(`#${e.target.id}`)
         })
       },
-      { threshold: 0.4 }
+      { threshold: 0.35, rootMargin: '-60px 0px 0px 0px' }
     )
     sections.forEach(s => obs.observe(s))
     return () => obs.disconnect()
+  }, [])
+
+  /* --- close mobile menu on ESC key --- */
+  useEffect(() => {
+    const onKey = e => { if (e.key === 'Escape') setMenuOpen(false) }
+    document.addEventListener('keydown', onKey)
+    return () => document.removeEventListener('keydown', onKey)
   }, [])
 
   return (
