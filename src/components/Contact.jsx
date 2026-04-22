@@ -56,16 +56,27 @@ export default function Contact() {
 
   const handleChange = e => setForm(p => ({ ...p, [e.target.name]: e.target.value }))
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault()
     setLoading(true)
-    // Replace with real mail integration (EmailJS / Formspree / backend endpoint)
-    setTimeout(() => {
-      setSent(true)
+    try {
+      const res = await fetch('https://formspree.io/f/mrerozzp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (res.ok) {
+        setSent(true)
+        setForm({ name: '', email: '', message: '' })
+        setTimeout(() => setSent(false), 6000)
+      } else {
+        alert('Erro ao enviar mensagem. Tente novamente.')
+      }
+    } catch {
+      alert('Erro de conexão. Tente novamente.')
+    } finally {
       setLoading(false)
-      setForm({ name: '', email: '', message: '' })
-      setTimeout(() => setSent(false), 6000)
-    }, 800)
+    }
   }
 
   return (
